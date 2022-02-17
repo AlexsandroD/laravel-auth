@@ -22,7 +22,7 @@
                         </div>
                         <div class="form-group">
                             <label for="content">Write the post Here</label>
-                            <textarea class="form-control  @error('content') is-invalid @enderror" name="content" id="content" placeholder="content" value="{{ old('title') }}"  placeholder rows="6"></textarea>
+                            <textarea class="form-control  @error('content') is-invalid @enderror" name="content" id="content" placeholder="content" value="{{ old('content') }}"  placeholder rows="6"></textarea>
                             @error('content')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

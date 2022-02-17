@@ -46,7 +46,6 @@ class PostController extends Controller
             ]);
 
             $data = $request->all();
-
             $newPost = new Post ();
             $newPost->title = $data['title'];
             $newPost->content = $data['content'];
@@ -62,7 +61,7 @@ class PostController extends Controller
                 $slug = Str::of($newPost->title)->slug("-") . "-{$count}";
                 $count++;
             }
-            $newPost->$slug = $slug;
+            $newPost->slug = $slug;
 
             $newPost->save();
 
@@ -113,7 +112,6 @@ class PostController extends Controller
 
             $data = $request->all();
 
-            $post = new Post ();
             $post->title = $data['title'];
             $post->content = $data['content'];
 
@@ -128,7 +126,7 @@ class PostController extends Controller
                 $slug = Str::of($post->title)->slug("-") . "-{$count}";
                 $count++;
             }
-            $post->$slug = $slug;
+            $post->slug = $slug;
 
             $post->save();
 

@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group">
                             <label for="content">Write the post Here</label>
-                            <textarea class="form-control  @error('content') is-invalid @enderror" name="content" id="content" placeholder="content" value="{{ old('title') ? old('title') : $post->content }}"  placeholder rows="6"></textarea>
+                            <textarea class="form-control  @error('content') is-invalid @enderror" name="content" id="content" placeholder="content" value="{{ old('content') ? old('content') : $post->content }}"  placeholder rows="6"></textarea>
                             @error('content')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -32,7 +32,7 @@
                              @php
                                 $published = old('published') ? old('published') : $post->published;
                              @endphp
-                             <input type="checkbox" class="form-check-input"class = "form-control  @error('published') is-invalid @enderror"  name="published" id="published  " value="{{  $published ? 'checked' : '' }}">
+                             <input type="checkbox" class="form-check-input" class="form-control  @error('published') is-invalid @enderror"  name="published" id="published  " value="{{  $published ? 'checked' : '' }}">
                              <label class="form-check-label" for="published">Pubblica</label>
                              @error('published')
                                 <div class="alert alert-danger">{{ $message }}</div>
