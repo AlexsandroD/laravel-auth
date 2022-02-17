@@ -66,7 +66,7 @@ class PostController extends Controller
 
             $newPost->save();
 
-            return redirect()->route("admin.posts.show", $newPost->id);
+            return redirect()->route("posts.show", $newPost->id);
 
         // creazione del post
 
@@ -92,7 +92,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-
+         return view('admin.posts.edit', compact("post"));
     }
 
     /**
@@ -132,7 +132,7 @@ class PostController extends Controller
 
             $post->save();
 
-            return redirect()->route("admin.posts.show", $post->id);
+            return redirect()->route("posts.show", $post->id);
 
     }
 
@@ -145,7 +145,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-         $post->delete();
+        $post->delete();
         return redirect()->route('posts.index');
     }
 }
